@@ -11,11 +11,9 @@ public class CharacterCounter {
 
     private TreeMap<Character, Integer> charCounter;
 
-
     public CharacterCounter(String line){
         this.charCounter = new TreeMap<Character, Integer>();
         for(int i = 0; i < line.length(); i++){
-            System.out.println(charCounter.containsKey(line.charAt(i)));
             if(!charCounter.containsKey(line.charAt(i)))
                 charCounter.put(line.charAt(i), 1);
             else
@@ -44,6 +42,7 @@ public class CharacterCounter {
                     charCounter.put('\n', 1);
                 else
                     charCounter.put('\n', charCounter.get('\n')+1);
+
             }
         }catch(IOException e){
             e.printStackTrace();
